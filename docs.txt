@@ -1,0 +1,19 @@
+https://www.adaltas.com/en/2023/06/01/dev-environment-terraform-lxd/
+
+xs_storage_pool: the LXD storage pool storing the disks of our containers
+xs_network: the LXD IPv4 network used by containers to communicate within a shared network
+xs_profiles: the LXD profiles created for our containers. Profiles allow the definition of a set of properties that can be applied to any container.
+xs_image: the LXD image. This essentially specifies which OS the containers run.
+xs_containers: The LXD instances to create.
+
+
+
+The following resources are created by Terraform:
+
+lxd_network.xs_network: the network for all our instances
+lxd_profile.xs_profiles: several profiles that can be defined by the user
+lxd_container.xs_containers: the instances’ definitions (including the application of the profile and the network device attachment)
+Variables file
+Finally, we provide Terraform with the variables specific to our environment. We use the auto.tfvars extension to automatically load the variables when terraform is run.
+
+Create local.auto.tfvars:
